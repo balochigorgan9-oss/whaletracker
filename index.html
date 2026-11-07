@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhaleTracker</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #0b1020;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 20px;
+  background: #151d32;
+  border-radius: 14px;
+}
+
+h1 {
+  color: #39d5a3;
+}
+
+.card {
+  background: #151d32;
+  padding: 20px;
+  margin-top: 18px;
+  border-radius: 14px;
+}
+
+input, button {
+  padding: 13px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  background: #26324a;
+  color: white;
+}
+
+button {
+  background: #39d5a3;
+  color: #07121a;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.note {
+  color: #aab5c8;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🐋 WhaleTracker</h1>
+  <p>Track large Solana wallet movements</p>
+</header>
+
+<div class="card">
+  <h2>Wallet Search</h2>
+  <input id="wallet" placeholder="Enter Solana wallet address">
+  <button onclick="searchWallet()">Search Wallet</button>
+  <p id="result"></p>
+</div>
+
+<div class="card">
+  <h2>Whale Activity</h2>
+  <p>Large transactions will appear here.</p>
+  <p class="note">
+    Demo version: live blockchain data is not connected yet.
+  </p>
+</div>
+
+<script>
+function searchWallet() {
+  const address = document.getElementById("wallet").value.trim();
+
+  document.getElementById("result").textContent =
+    address ? "Wallet entered: " + address :
+    "Please enter a wallet address.";
+}
+</script>
+
+</body>
+</html>
